@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 
 
 import { Container, Background } from "./style"
-import { getTrailer, getTrailerSerie } from "../../services/getData"
+import { ObterTrailer, ObterTrailerSerie } from "../../services/getData"
 
 
 
@@ -12,18 +12,16 @@ function Modal({ tipo, filmeId, mostrarModal }) {
   const [trailer, setTrailer] = useState()
   const [trailerSerie, setTrailerSerie] = useState()
 
-  console.log(trailerSerie)
-
   useEffect(() => {
 
     async function obterTrailer() {
 
 
       if (tipo == "serie") {
-        setTrailerSerie(await getTrailerSerie(filmeId))
+        setTrailerSerie(await ObterTrailerSerie(filmeId))
       }
       else {
-        setTrailer(await getTrailer(filmeId))
+        setTrailer(await ObterTrailer(filmeId))
       }
 
 

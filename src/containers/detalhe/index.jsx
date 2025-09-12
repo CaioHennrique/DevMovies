@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { Container, Background, Cover, Info, ContainerTrailers } from "./style"
 import { useParams } from "react-router-dom"
 import { ObterImagem } from "../../utils/obterImagem"
-import { getCredits, getDetalhe, getSimilar, getTrailer } from "../../services/getData"
+import { ObterCreditos, ObterDetalhe, ObterSimilares, ObterTrailer } from "../../services/getData"
 import Generos from "../../components/generos"
 import Creditos from "../../components/creditos"
 import SliderContent from "../../components/slider"
@@ -10,8 +10,8 @@ import SliderContent from "../../components/slider"
 
 function Detalhe() {
   const [trailer, setTrailer] = useState()
-  const [credits, setCredits] = useState()
-  const [similar, setSimilar] = useState()
+  const [creditos, setCreditos] = useState()
+  const [similares, setSimilares] = useState()
   const [detalhe, setDetalhe] = useState()
   const { id } = useParams()
 
@@ -19,16 +19,16 @@ function Detalhe() {
 
     Promise.all([
 
-      getDetalhe(id),
-      getTrailer(id),
-      getCredits(id),
-      getSimilar(id)
+      ObterDetalhe(id),
+      ObterTrailer(id),
+      ObterCreditos(id),
+      ObterSimilares(id)
 
     ]).then(([detalhe, trailers, creditos, similares]) => {
       setDetalhe(detalhe)
       setTrailer(trailers)
-      setCredits(creditos)
-      setSimilar(similares)
+      setCreditos(creditos)
+      setSimilares(similares)
 
     })
   }, [])
@@ -49,7 +49,7 @@ function Detalhe() {
               <Generos generos={detalhe.genres} />
               <p>{detalhe.overview}</p>
               <div>
-                <Creditos credits={credits} />
+                <Creditos credits={creditos} />
               </div>
             </Info>
             <div>
@@ -73,7 +73,7 @@ function Detalhe() {
 
           </ContainerTrailers>
 
-          {similar && <SliderContent info={similar} titulo={"Filmes Similares"} />}
+          {similares && <SliderContent info={similares} titulo={"Filmes Similares"} />}
 
         </>
       )}
