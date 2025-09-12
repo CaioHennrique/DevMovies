@@ -7,6 +7,7 @@ const Container = styled.div`
   padding: .5rem 1.5rem;
   z-index: 999999;
   position: fixed;
+  width: 100%;
 
   background-color: ${props => props.$mudarCor ? ("#000") : "transparent"};
   transition: background-color 0.6s ease-in-out;

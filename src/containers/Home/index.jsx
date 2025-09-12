@@ -49,23 +49,24 @@ function Home() {
         <>
 
             {filme && (
-                <Background imagem={ObterImagem(filme.backdrop_path)}>
-                    {mostrarModal && <Modal filmeId={filme.id} mostrarModal={setMostrarModal} />}
+                <Background imagem={ObterImagem(filme[1].backdrop_path)}>
+                    {mostrarModal && <Modal filmeId={filme[1].id} mostrarModal={setMostrarModal} />}
                     <ContainerConteudo>
-                        <h1>{filme.title}</h1>
+                        <h1>{filme[1].title}</h1>
 
-                        <p>{filme.overview}</p>
+                        <p>{filme[1].overview}</p>
 
-                        <Button onClick={() => navegacao(`/detalhe/${filme.id}`)} vermelho={true}>Assista agora</Button>
+                        <Button onClick={() => navegacao(`/detalhe/${filme[1].id}`)} vermelho={true}>Assista agora</Button>
                         <Button vermelho={false} onClick={() => setMostrarModal(true)} >Assista o trailer</Button>
 
                     </ContainerConteudo>
 
-                    <Img src={ObterImagem(filme.poster_path)} />
+                    <Img src={ObterImagem(filme[1].poster_path)} />
 
                 </Background>
             )}
 
+            {filme && <SliderContent info={filme} titulo={"Filmes"} />}
             {topFilmes && <SliderContent info={topFilmes} titulo={"Top Filmes"} />}
             {topSeries && <SliderContent info={topSeries} titulo={"Top Séries"} />}
             {popularSeries && <SliderContent info={popularSeries} titulo={"Séries Populares"} />}

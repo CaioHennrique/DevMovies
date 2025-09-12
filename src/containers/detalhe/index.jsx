@@ -15,8 +15,6 @@ function Detalhe() {
   const [detalhe, setDetalhe] = useState()
   const { id } = useParams()
 
-  console.log(trailer)
-
   useEffect(() => {
 
     Promise.all([

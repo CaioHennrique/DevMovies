@@ -4,7 +4,7 @@ async function ObterFilme() {
 
     const { data: { results } } = await api.get("/movie/popular")
 
-    return results[2]
+    return results
 
 }
 
@@ -39,7 +39,6 @@ async function ObterPopularArtistas() {
 
 }
 
-// API PARA A PAGINACAO DO DETALHE
 
 async function getTrailer(filmeId) {
 
@@ -48,6 +47,9 @@ async function getTrailer(filmeId) {
     return results
 
 }
+
+
+// API PARA A PAGINACAO DO DETALHE
 
 async function getCredits(filmeId) {
 
@@ -73,4 +75,4 @@ async function getDetalhe(filmeId) {
 
 }
 
-export {getCredits, getSimilar, getDetalhe, getTrailer, ObterPopularArtistas, ObterPopularSeries, ObterTopSeries, ObterTopFilmes, ObterFilme }
+export { getCredits, getSimilar, getDetalhe, getTrailer, ObterPopularArtistas, ObterPopularSeries, ObterTopSeries, ObterTopFilmes, ObterFilme }
