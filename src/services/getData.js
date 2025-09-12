@@ -47,6 +47,14 @@ async function getTrailer(filmeId) {
     return results
 
 }
+async function getTrailerSerie(SerieId) {
+
+    const { data: { results } } = await api.get(`/tv/${SerieId}/videos`)
+
+    return results
+
+}
+
 
 
 // API PARA A PAGINACAO DO DETALHE
@@ -75,4 +83,4 @@ async function getDetalhe(filmeId) {
 
 }
 
-export { getCredits, getSimilar, getDetalhe, getTrailer, ObterPopularArtistas, ObterPopularSeries, ObterTopSeries, ObterTopFilmes, ObterFilme }
+export {getTrailerSerie, getCredits, getSimilar, getDetalhe, getTrailer, ObterPopularArtistas, ObterPopularSeries, ObterTopSeries, ObterTopFilmes, ObterFilme }

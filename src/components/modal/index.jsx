@@ -2,20 +2,30 @@ import { useState, useEffect } from "react"
 
 
 import { Container, Background } from "./style"
-import { getTrailer } from "../../services/getData"
+import { getTrailer, getTrailerSerie } from "../../services/getData"
 
 
 
 
 
-function Modal({ filmeId, mostrarModal }) {
+function Modal({ tipo, filmeId, mostrarModal }) {
   const [trailer, setTrailer] = useState()
+  const [trailerSerie, setTrailerSerie] = useState()
+
+  console.log(trailerSerie)
 
   useEffect(() => {
 
     async function obterTrailer() {
 
-      setTrailer(await getTrailer(filmeId))
+
+      if (tipo == "serie") {
+        setTrailerSerie(await getTrailerSerie(filmeId))
+      }
+      else {
+        setTrailer(await getTrailer(filmeId))
+      }
+
 
     }
     obterTrailer()
@@ -27,6 +37,16 @@ function Modal({ filmeId, mostrarModal }) {
   return (
 
     <Background onClick={() => mostrarModal(false)}>
+      {trailerSerie && (
+        <Container>
+          <iframe src={`https://www.youtube.com/embed/${trailerSerie[0].key}`}
+            title="Youtube video Player"
+            height="500px"
+            width="100%">
+          </iframe>
+
+        </Container>
+      )}
       {trailer && (
         <Container>
           <iframe src={`https://www.youtube.com/embed/${trailer[0].key}`}

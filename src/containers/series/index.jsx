@@ -44,7 +44,7 @@ function Series() {
 
             {popularSeries && (
                 <Background imagem={ObterImagem(popularSeries[1].backdrop_path)}>
-                    {mostrarModal && <Modal filmeId={popularSeries[1].id} mostrarModal={setMostrarModal} />}
+                    {mostrarModal && <Modal tipo="serie" filmeId={popularSeries[1].id} mostrarModal={setMostrarModal} />}
                     <ContainerConteudo>
                         <h1>{popularSeries[1].name}</h1>
 
