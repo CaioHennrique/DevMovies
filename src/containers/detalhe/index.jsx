@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { Container, Background, Cover, Info, ContainerTrailers } from "./style"
 import { useParams } from "react-router-dom"
 import { ObterImagem } from "../../utils/obterImagem"
-import { ObterCreditos, ObterCreditosSeries, ObterDetalhe, ObterDetalheSeries, ObterSimilares, ObterSimilaresSeries, ObterTrailer, ObterTrailerSerie } from "../../services/getData"
+import { ObterCreditos, ObterDetalhe, ObterSimilares, ObterTrailer } from "../../services/getData"
 import Generos from "../../components/generos"
 import Creditos from "../../components/creditos"
 import SliderContent from "../../components/slider"
@@ -13,11 +13,6 @@ function Detalhe() {
   const [creditos, setCreditos] = useState()
   const [similares, setSimilares] = useState()
   const [detalhe, setDetalhe] = useState()
-
-  const [trailerSerie, setTrailerSerie] = useState()
-  const [creditosSerie, setCreditosSerie] = useState()
-  const [similaresSerie, setSimilaresSerie] = useState()
-  const [detalheSerie, setDetalheSerie] = useState()
   const { id } = useParams()
 
   useEffect(() => {
@@ -29,21 +24,12 @@ function Detalhe() {
       ObterCreditos(id),
       ObterSimilares(id),
 
-      ObterDetalheSeries(id),
-      ObterTrailerSerie(id),
-      ObterCreditosSeries(id),
-      ObterSimilaresSeries(id)
+    ]).then(([detalhe, trailers, creditos, similares]) => {
 
-    ]).then(([detalhe, trailers, creditos, similares, detalheSerie, trailersSerie, creditosSerie, similaresSerie]) => {
       setDetalhe(detalhe)
       setTrailer(trailers)
       setCreditos(creditos)
       setSimilares(similares)
-      
-      setDetalheSerie(detalheSerie)
-      setTrailerSerie(trailersSerie)
-      setCreditosSerie(creditosSerie)
-      setSimilaresSerie(similaresSerie)
 
     })
   }, [])
@@ -52,7 +38,6 @@ function Detalhe() {
   return (
     <>
 
-      {/* tela de detalhe de filme */}
       {detalhe && (
         <>
           <Background image={ObterImagem(detalhe.backdrop_path)} />
@@ -91,49 +76,6 @@ function Detalhe() {
           </ContainerTrailers>
 
           {similares && <SliderContent info={similares} titulo={"Filmes Similares"} />}
-
-        </>
-      )}
-
-      {/* tela de detalhe de serie */}
-      {detalheSerie && (
-        <>
-          <Background image={ObterImagem(detalheSerie.backdrop_path)} />
-
-          <Container>
-            <Cover>
-              <img src={ObterImagem(detalheSerie.poster_path)} />
-            </Cover>
-            <Info>
-              <h2>{detalheSerie.name}</h2>
-              <Generos generos={detalheSerie.genres} />
-              <p>{detalheSerie.overview}</p>
-              <div>
-                <Creditos credits={creditosSerie} />
-              </div>
-            </Info>
-            <div>
-
-            </div>
-
-          </Container>
-          <ContainerTrailers>
-
-            {trailerSerie && trailerSerie.map(trailer => (
-              <div key={trailer.id}>
-                <h4>{trailer.name}</h4>
-                <iframe src={`https://www.youtube.com/embed/${trailer.key}`}
-                  title="Youtube video Player"
-                  height="500px"
-                  width="100%">
-                </iframe>
-              </div>
-
-            ))}
-
-          </ContainerTrailers>
-
-          {similares && <SliderContent info={similaresSerie} titulo={"Filmes Similares"} />}
 
         </>
       )}
