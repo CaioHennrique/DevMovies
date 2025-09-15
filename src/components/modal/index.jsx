@@ -35,6 +35,7 @@ function Modal({ tipo, filmeId, mostrarModal }) {
   return (
 
     <Background onClick={() => mostrarModal(false)}>
+      {/* tela de trailer serie */}
       {trailerSerie && (
         <Container>
           <iframe src={`https://www.youtube.com/embed/${trailerSerie[0].key}`}
@@ -45,6 +46,7 @@ function Modal({ tipo, filmeId, mostrarModal }) {
 
         </Container>
       )}
+      {/* tela de trailer filme */}
       {trailer && (
         <Container>
           <iframe src={`https://www.youtube.com/embed/${trailer[0].key}`}

@@ -39,14 +39,8 @@ async function ObterPopularArtistas() {
 
 }
 
+// API PARA A PAGINACAO DO DETALHE SERIES
 
-async function ObterTrailer(filmeId) {
-
-    const { data: { results } } = await api.get(`/movie/${filmeId}/videos`)
-
-    return results
-
-}
 async function ObterTrailerSerie(SerieId) {
 
     const { data: { results } } = await api.get(`/tv/${SerieId}/videos`)
@@ -55,9 +49,41 @@ async function ObterTrailerSerie(SerieId) {
 
 }
 
+async function ObterCreditosSeries(SerieId) {
+
+    const { data: { cast } } = await api.get(`/tv/${SerieId}/credits`)
+
+    return cast
+
+}
+
+async function ObterSimilaresSeries(SerieId) {
+
+    const { data: { results } } = await api.get(`/tv/${SerieId}/similar`)
+
+    return results
+
+}
+
+async function ObterDetalheSeries(SerieId) {
+
+    const { data } = await api.get(`/tv/${SerieId}`)
+
+    return data
+
+}
 
 
-// API PARA A PAGINACAO DO DETALHE
+
+// API PARA A PAGINACAO DO DETALHE FILMES
+
+async function ObterTrailer(filmeId) {
+
+    const { data: { results } } = await api.get(`/movie/${filmeId}/videos`)
+
+    return results
+
+}
 
 async function ObterCreditos(filmeId) {
 
@@ -83,4 +109,4 @@ async function ObterDetalhe(filmeId) {
 
 }
 
-export {ObterTrailerSerie, ObterCreditos, ObterSimilares, ObterDetalhe, ObterTrailer, ObterPopularArtistas, ObterPopularSeries, ObterTopSeries, ObterTopFilmes, ObterFilme }
+export { ObterCreditosSeries, ObterSimilaresSeries, ObterDetalheSeries, ObterTrailerSerie, ObterCreditos, ObterSimilares, ObterDetalhe, ObterTrailer, ObterPopularArtistas, ObterPopularSeries, ObterTopSeries, ObterTopFilmes, ObterFilme }

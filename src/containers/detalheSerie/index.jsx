@@ -2,17 +2,13 @@ import { useEffect, useState } from "react"
 import { Container, Background, Cover, Info, ContainerTrailers } from "./style"
 import { useParams } from "react-router-dom"
 import { ObterImagem } from "../../utils/obterImagem"
-import { ObterCreditos, ObterCreditosSeries, ObterDetalhe, ObterDetalheSeries, ObterSimilares, ObterSimilaresSeries, ObterTrailer, ObterTrailerSerie } from "../../services/getData"
+import { ObterCreditosSeries, ObterDetalheSeries, ObterSimilaresSeries, ObterTrailerSerie } from "../../services/getData"
 import Generos from "../../components/generos"
 import Creditos from "../../components/creditos"
 import SliderContent from "../../components/slider"
 
 
-function Detalhe() {
-  const [trailer, setTrailer] = useState()
-  const [creditos, setCreditos] = useState()
-  const [similares, setSimilares] = useState()
-  const [detalhe, setDetalhe] = useState()
+function DetalheSerie() {
 
   const [trailerSerie, setTrailerSerie] = useState()
   const [creditosSerie, setCreditosSerie] = useState()
@@ -24,22 +20,13 @@ function Detalhe() {
 
     Promise.all([
 
-      ObterDetalhe(id),
-      ObterTrailer(id),
-      ObterCreditos(id),
-      ObterSimilares(id),
-
       ObterDetalheSeries(id),
       ObterTrailerSerie(id),
       ObterCreditosSeries(id),
       ObterSimilaresSeries(id)
 
-    ]).then(([detalhe, trailers, creditos, similares, detalheSerie, trailersSerie, creditosSerie, similaresSerie]) => {
-      setDetalhe(detalhe)
-      setTrailer(trailers)
-      setCreditos(creditos)
-      setSimilares(similares)
-      
+    ]).then(([detalheSerie, trailersSerie, creditosSerie, similaresSerie]) => {
+
       setDetalheSerie(detalheSerie)
       setTrailerSerie(trailersSerie)
       setCreditosSerie(creditosSerie)
@@ -51,49 +38,6 @@ function Detalhe() {
 
   return (
     <>
-
-      {/* tela de detalhe de filme */}
-      {detalhe && (
-        <>
-          <Background image={ObterImagem(detalhe.backdrop_path)} />
-
-          <Container>
-            <Cover>
-              <img src={ObterImagem(detalhe.poster_path)} />
-            </Cover>
-            <Info>
-              <h2>{detalhe.title}</h2>
-              <Generos generos={detalhe.genres} />
-              <p>{detalhe.overview}</p>
-              <div>
-                <Creditos credits={creditos} />
-              </div>
-            </Info>
-            <div>
-
-            </div>
-
-          </Container>
-          <ContainerTrailers>
-
-            {trailer && trailer.map(trailer => (
-              <div key={trailer.id}>
-                <h4>{trailer.name}</h4>
-                <iframe src={`https://www.youtube.com/embed/${trailer.key}`}
-                  title="Youtube video Player"
-                  height="500px"
-                  width="100%">
-                </iframe>
-              </div>
-
-            ))}
-
-          </ContainerTrailers>
-
-          {similares && <SliderContent info={similares} titulo={"Filmes Similares"} />}
-
-        </>
-      )}
 
       {/* tela de detalhe de serie */}
       {detalheSerie && (
@@ -133,7 +77,7 @@ function Detalhe() {
 
           </ContainerTrailers>
 
-          {similares && <SliderContent info={similaresSerie} titulo={"Filmes Similares"} />}
+          {similaresSerie && <SliderContent info={similaresSerie} titulo={"Series Similares"} />}
 
         </>
       )}
@@ -141,4 +85,4 @@ function Detalhe() {
   )
 }
 
-export default Detalhe
+export default DetalheSerie

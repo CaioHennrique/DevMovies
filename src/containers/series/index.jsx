@@ -43,19 +43,19 @@ function Series() {
         <>
 
             {popularSeries && (
-                <Background imagem={ObterImagem(popularSeries[1].backdrop_path)}>
-                    {mostrarModal && <Modal tipo="serie" filmeId={popularSeries[1].id} mostrarModal={setMostrarModal} />}
+                <Background imagem={ObterImagem(popularSeries[0].backdrop_path)}>
+                    {mostrarModal && <Modal tipo="serie" filmeId={popularSeries[0].id} mostrarModal={setMostrarModal} />}
                     <ContainerConteudo>
-                        <h1>{popularSeries[1].name}</h1>
+                        <h1>{popularSeries[0].name}</h1>
 
-                        <p>{popularSeries[1].overview}</p>
+                        <p>{popularSeries[0].overview}</p>
 
-                        <Button onClick={() => navegacao(`/detalhe/${popularSeries[1].id}`)} vermelho={true}>Assista agora</Button>
+                        <Button onClick={() => navegacao(`/detalheSerie/${popularSeries[0].id}`)} vermelho={true}>Assista agora</Button>
                         <Button vermelho={false} onClick={() => setMostrarModal(true)} >Assista o trailer</Button>
 
                     </ContainerConteudo>
 
-                    <Img src={ObterImagem(popularSeries[1].poster_path)} />
+                    <Img src={ObterImagem(popularSeries[0].poster_path)} />
 
                 </Background>
             )}
