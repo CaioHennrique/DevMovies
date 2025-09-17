@@ -3,9 +3,19 @@ import styled, {keyframes} from "styled-components";
 const scale = keyframes`
 
 from{
-    transform: scale(0);
+    transform: scale(0.7);
 }to{
     transform: scale(1);
+}
+
+`
+const fadeIn = keyframes`
+
+from{
+    opacity: 0.5;
+}to{
+    opacity: 1;
+
 }
 
 `
@@ -19,6 +29,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 position: relative;
+animation:  ${fadeIn} 1.2s ease-in-out ;
 
 
 
@@ -67,7 +78,7 @@ const Img = styled.img`
 height: 600px;
 border-radius: 25px;
 z-index: 999;
-animation: ${scale} 0.5s linear;
+animation: ${scale} 1s linear;
 `
 
 export { Background, ContainerConteudo, Img }

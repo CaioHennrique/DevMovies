@@ -14,7 +14,8 @@ import { ObterFilme, ObterPopularArtistas, ObterTopFilmes } from "../../services
 function Filmes() {
 
     const [filme, setFilme] = useState();
-    const [topFilmes, setTopFilmes] = useState();
+    const [index, setIndex] = useState(1)
+    const [topFilmes, setTopFilmes] = useState([]);
     const [popularArtistas, setPopularArtistas] = useState();
     const [mostrarModal, setMostrarModal] = useState(false)
     const navegacao = useNavigate()
@@ -29,7 +30,7 @@ function Filmes() {
             ObterTopFilmes(),
             ObterPopularArtistas()
 
-        ]).then(([filme, topFilmes,popularArtistas]) => {
+        ]).then(([filme, topFilmes, popularArtistas]) => {
 
             setFilme(filme)
             setTopFilmes(topFilmes)
@@ -38,24 +39,35 @@ function Filmes() {
         })
     }, [])
 
+    useEffect(() => {
+        if (topFilmes.length > 1) {
+            const intervalo = setInterval(() => {
+                setIndex((prev) => (prev + 1) % topFilmes.length)
+            } ,15000)
+            return () => clearInterval(intervalo)
+        }
+    }, [topFilmes])
+
+    const destaqueAtual = topFilmes[index]
+
     return (
 
         <>
 
-            {filme && (
-                <Background imagem={ObterImagem(filme[0].backdrop_path)}>
-                    {mostrarModal && <Modal filmeId={filme[0].id} mostrarModal={setMostrarModal} />}
+            {destaqueAtual && (
+                <Background  key={destaqueAtual.id}  imagem={ObterImagem(destaqueAtual.backdrop_path)}>
+                    {mostrarModal && <Modal filmeId={destaqueAtual.id} mostrarModal={setMostrarModal} />}
                     <ContainerConteudo>
-                        <h1>{filme[0].title}</h1>
+                        <h1>{destaqueAtual.title}</h1>
 
-                        <p>{filme[0].overview}</p>
+                        <p>{destaqueAtual.overview}</p>
 
-                        <Button onClick={() => navegacao(`/detalhe/${filme[0].id}`)} vermelho={true}>Assista agora</Button>
+                        <Button onClick={() => navegacao(`/detalhe/${destaqueAtual.id}`)} vermelho={true}>Assista agora</Button>
                         <Button vermelho={false} onClick={() => setMostrarModal(true)} >Assista o trailer</Button>
 
                     </ContainerConteudo>
 
-                    <Img src={ObterImagem(filme[0].poster_path)} />
+                    <Img src={ObterImagem(destaqueAtual.poster_path)} />
 
                 </Background>
             )}

@@ -11,6 +11,11 @@ iframe{
     border: none;
 }
 
+h1 {
+    text-align: center;
+    color: red;
+    font-weight: bolder
+}
 `
 const Background = styled.div`
 

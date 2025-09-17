@@ -13,7 +13,8 @@ import {ObterPopularArtistas, ObterPopularSeries, ObterTopSeries} from "../../se
 
 function Series() {
 
-    const [topSeries, setTopSeries] = useState();
+    const [topSeries, setTopSeries] = useState([]);
+    const [index, setIndex] = useState(0)
     const [popularSeries, setPopularSeries] = useState();
     const [popularArtistas, setPopularArtistas] = useState();
     const [mostrarModal, setMostrarModal] = useState(false)
@@ -38,24 +39,39 @@ function Series() {
         })
     }, [])
 
+
+    useEffect(() =>{
+   
+        if(topSeries.length > 0){
+            const intervalo = setInterval(() =>{
+                setIndex((prev) => (prev + 1) % topSeries.length)
+            }, 15000)
+
+            return () => clearInterval(intervalo)
+        }
+
+    },[topSeries])
+
+    const destaqueAtual = topSeries[index]
+
     return (
 
         <>
 
-            {popularSeries && (
-                <Background imagem={ObterImagem(popularSeries[0].backdrop_path)}>
-                    {mostrarModal && <Modal tipo="serie" filmeId={popularSeries[0].id} mostrarModal={setMostrarModal} />}
+            {destaqueAtual && (
+                <Background imagem={ObterImagem(destaqueAtual.backdrop_path)}>
+                    {mostrarModal && <Modal tipo="serie" filmeId={destaqueAtual.id} mostrarModal={setMostrarModal} />}
                     <ContainerConteudo>
-                        <h1>{popularSeries[0].name}</h1>
+                        <h1>{destaqueAtual.name}</h1>
 
-                        <p>{popularSeries[0].overview}</p>
+                        <p>{destaqueAtual.overview}</p>
 
-                        <Button onClick={() => navegacao(`/detalheSerie/${popularSeries[0].id}`)} vermelho={true}>Assista agora</Button>
+                        <Button onClick={() => navegacao(`/detalheSerie/${destaqueAtual.id}`)} vermelho={true}>Assista agora</Button>
                         <Button vermelho={false} onClick={() => setMostrarModal(true)} >Assista o trailer</Button>
 
                     </ContainerConteudo>
 
-                    <Img src={ObterImagem(popularSeries[0].poster_path)} />
+                    <Img src={ObterImagem(destaqueAtual.poster_path)} />
 
                 </Background>
             )}

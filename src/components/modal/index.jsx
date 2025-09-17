@@ -17,7 +17,7 @@ function Modal({ tipo, filmeId, mostrarModal }) {
     async function obterTrailer() {
 
 
-      if (tipo == "serie") {
+      if (tipo == "serie"  ) {
         setTrailerSerie(await ObterTrailerSerie(filmeId))
       }
       else {
@@ -29,6 +29,8 @@ function Modal({ tipo, filmeId, mostrarModal }) {
     obterTrailer()
 
   }, [])
+
+  console.log(trailer)
 
 
 
