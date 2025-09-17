@@ -25,7 +25,7 @@ letter-spacing: 2px;
 @media ${Breakpoints.pequeno} {
 
     font-size: 1rem;
-    padding: .8rem;
+    padding: .2rem .8rem;
     
 }
 
