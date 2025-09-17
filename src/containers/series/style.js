@@ -79,6 +79,10 @@ p{
     margin-bottom: 1.5rem;
 }
 
+div{
+    display: flex;
+}
+
 @media ${Breakpoints.pequeno} {
 
     width: 100%;
@@ -105,6 +109,7 @@ animation: ${scale} 1s linear;
 @media ${Breakpoints.pequeno}{
 
     height: 300px;
+    margin-top: 6rem;
     
 }
 `

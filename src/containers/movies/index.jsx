@@ -43,7 +43,7 @@ function Filmes() {
         if (topFilmes.length > 1) {
             const intervalo = setInterval(() => {
                 setIndex((prev) => (prev + 1) % topFilmes.length)
-            } ,15000)
+            }, 15000)
             return () => clearInterval(intervalo)
         }
     }, [topFilmes])
@@ -55,16 +55,17 @@ function Filmes() {
         <>
 
             {destaqueAtual && (
-                <Background  key={destaqueAtual.id}  imagem={ObterImagem(destaqueAtual.backdrop_path)}>
+                <Background key={destaqueAtual.id} imagem={ObterImagem(destaqueAtual.backdrop_path)}>
                     {mostrarModal && <Modal filmeId={destaqueAtual.id} mostrarModal={setMostrarModal} />}
                     <ContainerConteudo>
                         <h1>{destaqueAtual.title}</h1>
 
                         <p>{destaqueAtual.overview}</p>
 
-                        <Button onClick={() => navegacao(`/detalhe/${destaqueAtual.id}`)} vermelho={true}>Assista agora</Button>
-                        <Button vermelho={false} onClick={() => setMostrarModal(true)} >Assista o trailer</Button>
-
+                        <div>
+                            <Button onClick={() => navegacao(`/detalhe/${destaqueAtual.id}`)} vermelho={true}>Assista agora</Button>
+                            <Button vermelho={false} onClick={() => setMostrarModal(true)} >Assista o trailer</Button>
+                        </div>
                     </ContainerConteudo>
 
                     <Img src={ObterImagem(destaqueAtual.poster_path)} />

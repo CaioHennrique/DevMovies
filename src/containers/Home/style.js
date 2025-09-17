@@ -110,6 +110,7 @@ animation: ${scale} 1s linear;
 @media ${Breakpoints.pequeno}{
 
     height: 300px;
+    margin-top: 6rem;
     
 }
 
