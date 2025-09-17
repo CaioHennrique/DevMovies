@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import Breakpoints from "../../styles/breakpoints"
 
 const Container = styled.div`
   display: flex;
@@ -7,8 +8,8 @@ const Container = styled.div`
   flex-direction: column;
   
 img {
-    width: 300px;
-    height: 100%;
+    height: 500px;
+    width: auto;
     border-radius: 20px;
 }
 
@@ -16,6 +17,17 @@ h3{
     color: white;
     margin: 1rem 0;
 
+}
+
+@media ${Breakpoints.pequeno} {
+  
+  img{
+    height: 250px;
+  }
+
+  h3{
+    font-size: 1rem;
+  }
 }
 
 `

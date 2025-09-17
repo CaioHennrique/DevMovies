@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import breakpoints from "../../styles/breakpoints"
 
 const Container = styled.div`
 
@@ -11,23 +12,23 @@ iframe{
     border: none;
 }
 
-h1 {
-    text-align: center;
-    color: red;
-    font-weight: bolder
+
+@media ${breakpoints.pequeno} {
+
+    width: 95%;
+    
 }
 `
 const Background = styled.div`
 
 height: 100vh;
-width: 99.2vw;
+width: 100%;
 background-color: #00000089;
 position: absolute;
 display: flex;
 align-items: center;
 justify-content: center;
 z-index: 999999;
-overflow-y: hidden;
 `
 
 export { Container, Background }

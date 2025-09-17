@@ -1,5 +1,5 @@
 import styled from "styled-components"
-
+import breakpoints from  "../../styles/breakpoints"
 
 
 const Container = styled.div`
@@ -12,6 +12,12 @@ margin: 1.5rem 0;
         border: 2px solid white;
         border-radius: 30px;
         font-size: 1.2rem;
+    }
+
+    @media ${breakpoints.pequeno} {
+
+        flex-wrap: wrap;
+        
     }
 
 

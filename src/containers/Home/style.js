@@ -1,4 +1,5 @@
 import styled, {keyframes} from "styled-components";
+import Breakpoints from "../../styles/breakpoints";
 
 const scale = keyframes`
 
@@ -30,8 +31,7 @@ align-items: center;
 justify-content: center;
 position: relative;
 animation:  ${fadeIn} 1.2s ease-in-out ;
-
-
+ 
 
 &::before{
     content:"" ;
@@ -52,6 +52,13 @@ width: 100%;
 background: linear-gradient(180deg,rgba(56, 56, 56, 0) 0%, rgba(0, 0, 0, 1) 96%);
 }
 
+
+@media ${Breakpoints.pequeno} {
+
+    flex-direction: column-reverse;
+
+}
+
 `
 const ContainerConteudo = styled.div`
 padding: 2rem;
@@ -61,6 +68,7 @@ color: white;
 z-index: 999;
 
 h1{
+
     font-size: 4rem;
     
 }
@@ -71,6 +79,24 @@ p{
     margin-bottom: 1.5rem;
 }
 
+div{
+    display: flex;
+}
+
+@media ${Breakpoints.pequeno} {
+
+    width: 100%;
+    margin: 0 auto ;
+
+    h1{
+        font-size: 2rem;
+    }
+    
+    p{
+        font-size:1rem;
+        margin: 1rem 0;
+    }
+}
 
 `
 const Img = styled.img`
@@ -79,6 +105,16 @@ height: 600px;
 border-radius: 25px;
 z-index: 999;
 animation: ${scale} 1s linear;
+
+
+@media ${Breakpoints.pequeno}{
+
+    height: 300px;
+    
+}
+
+
+
 `
 
 export { Background, ContainerConteudo, Img }

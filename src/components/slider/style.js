@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import  Breakpoints  from "../../styles/breakpoints"
 
 const Container = styled.div`
   background-color: #000;
@@ -14,7 +15,6 @@ const Container = styled.div`
   .swiper-wrapper {
     display: flex;
   }
-
 `
 
 

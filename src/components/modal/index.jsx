@@ -30,9 +30,6 @@ function Modal({ tipo, filmeId, mostrarModal }) {
 
   }, [])
 
-  console.log(trailer)
-
-
 
   return (
 

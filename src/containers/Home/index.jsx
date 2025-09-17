@@ -53,7 +53,7 @@ function Home() {
             }, 15000)
             return () => clearInterval(intervalo)
         }
-    },[filme])
+    }, [filme])
 
     const destaqueAtual = filme[index]
 
@@ -69,8 +69,11 @@ function Home() {
 
                         <p>{destaqueAtual.overview}</p>
 
-                        <Button onClick={() => navegacao(`/detalhe/${destaqueAtual.id}`)} vermelho={true}>Assista agora</Button>
-                        <Button vermelho={false} onClick={() => setMostrarModal(true)} >Assista o trailer</Button>
+
+                        <div>
+                            <Button onClick={() => navegacao(`/detalhe/${destaqueAtual.id}`)} vermelho={true}>Assista agora</Button>
+                            <Button vermelho={false} onClick={() => setMostrarModal(true)} >Assista o trailer</Button>
+                        </div>
 
                     </ContainerConteudo>
 

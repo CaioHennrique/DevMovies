@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import Breakpoints from "../../styles/breakpoints"
 
 const Container = styled.div`
   display: flex;
@@ -7,13 +8,19 @@ const Container = styled.div`
   padding: .5rem 2.5rem;
   z-index: 999999;
   position: fixed;
-  width: 100%;
+  width: 100vw;
 
   background-color: ${props => props.$mudarCor ? ("#000") : "transparent"};
   transition: background-color 0.6s ease-in-out;
   
  img {
-  width: 25%;
+  width: 30%;
+
+  
+}
+@media ${Breakpoints.pequeno}{
+ 
+    padding: .5rem 1rem; 
 }
 
 `
@@ -32,6 +39,11 @@ const Li = styled.li`
 font-weight: 600;
 font-size: 1.8rem;
 position: relative;
+
+@media ${Breakpoints.pequeno}{
+ font-size: 1rem ;
+
+}
 
 
 a {

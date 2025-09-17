@@ -1,4 +1,5 @@
 import styled, {css} from "styled-components"
+import Breakpoints from "../../styles/breakpoints"
 
 const btn = css`
 
@@ -19,6 +20,13 @@ letter-spacing: 2px;
     background-color: white;
     color: #FF0000;
 
+}
+
+@media ${Breakpoints.pequeno} {
+
+    font-size: 1rem;
+    padding: .8rem;
+    
 }
 
 ` 
