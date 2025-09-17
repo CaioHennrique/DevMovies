@@ -20,7 +20,7 @@ const Container = styled.div`
 }
 @media ${Breakpoints.pequeno}{
  
-    padding: .5rem 1rem; 
+    padding: .8rem 1rem; 
 }
 
 `
