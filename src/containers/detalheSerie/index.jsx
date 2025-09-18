@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Container, Background, Cover, Info, ContainerTrailers } from "./style"
+import { Container, Background, Cover, Info, ContainerTrailers } from "../detalhe/style"
 import { useParams } from "react-router-dom"
 import { ObterImagem } from "../../utils/obterImagem"
 import { ObterCreditosSeries, ObterDetalheSeries, ObterSimilaresSeries, ObterTrailerSerie } from "../../services/getData"

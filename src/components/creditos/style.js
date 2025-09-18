@@ -15,6 +15,15 @@ img{
 
 }
 
+@media ${Breakpoints.medio} {
+
+     flex-wrap: wrap;
+    img{
+        height: 250px;
+    }
+}
+
+
 @media ${Breakpoints.pequeno} {
 
      flex-wrap: wrap;

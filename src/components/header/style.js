@@ -18,6 +18,7 @@ const Container = styled.div`
 
   
 }
+
 @media ${Breakpoints.pequeno}{
  
     padding: .8rem 1rem; 
@@ -39,6 +40,12 @@ const Li = styled.li`
 font-weight: 600;
 font-size: 1.8rem;
 position: relative;
+
+@media ${Breakpoints.medio}{
+ font-size: 1.4rem ;
+
+}
+
 
 @media ${Breakpoints.pequeno}{
  font-size: 1rem ;

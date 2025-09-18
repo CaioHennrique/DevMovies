@@ -1,6 +1,6 @@
 const tamanho = {
-    pequeno: "450px",
-    medio: "700px",
+    pequeno: "600px",
+    medio: "750px",
     grande: "1000px"
 }
 

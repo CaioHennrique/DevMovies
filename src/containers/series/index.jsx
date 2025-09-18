@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react"
 
-import { Background, ContainerConteudo, Img } from "./style"
+import { Background, ContainerConteudo, Img } from "../Home/style"
 import Button from "../../components/button"
 import SliderContent from "../../components/slider"
 import { ObterImagem } from "../../utils/obterImagem"

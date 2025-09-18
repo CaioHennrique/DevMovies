@@ -19,6 +19,13 @@ h3{
 
 }
 
+@media ${Breakpoints.medio} {
+  
+  img{
+    height: 400px;
+  }
+}
+
 @media ${Breakpoints.pequeno} {
   
   img{

@@ -12,6 +12,12 @@ iframe{
     border: none;
 }
 
+@media ${breakpoints.medio} {
+
+    width: 95%;
+    
+}
+
 
 @media ${breakpoints.pequeno} {
 

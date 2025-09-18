@@ -57,6 +57,17 @@ img{
     animation: ${scale} 0.5s linear;
 }
 
+@media ${Breakpoints.medio} {
+
+   margin: 0 auto;
+
+    img{
+        height: 400px;
+    }
+    
+
+}
+
 @media ${Breakpoints.pequeno} {
 
    margin: 0 auto;
@@ -79,10 +90,17 @@ height: 100%;
 margin-top:-10rem;
 cursor:default;
 
+@media ${Breakpoints.medio} {
+
+    flex-direction: column;
+    margin-top:-70%;
+
+}
+
 @media ${Breakpoints.pequeno} {
 
     flex-direction: column;
-    margin-top:-90%;
+    margin-top:-70%;
 
 }
 
@@ -104,6 +122,22 @@ h2{
 p{
 font-size: 1.2rem;
 
+}
+
+@media ${Breakpoints.medio} {
+
+    width: 100%;
+    margin: 0 auto ;
+
+    h2{
+        font-size: 3rem;
+    }
+    
+    p{
+        font-size:1.5rem;
+        font-weight: 500;
+        margin: 1rem 0;
+    }
 }
 
 @media ${Breakpoints.pequeno} {
@@ -151,11 +185,20 @@ iframe {
     border: none;
 }
 
+@media ${Breakpoints.medio} {
+
+    div{
+        width: 80%;
+    }
+
+ 
+}
+
 
 @media ${Breakpoints.pequeno} {
 
     div{
-        width: 90%;
+        width: 80%;
     }
 
  

@@ -1,4 +1,4 @@
-import styled, {keyframes} from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Breakpoints from "../../styles/breakpoints";
 
 const scale = keyframes`
@@ -59,6 +59,12 @@ background: linear-gradient(180deg,rgba(56, 56, 56, 0) 0%, rgba(0, 0, 0, 1) 96%)
 
 }
 
+@media ${Breakpoints.medio} {
+
+    flex-direction: column-reverse;
+
+}
+
 `
 const ContainerConteudo = styled.div`
 padding: 2rem;
@@ -83,6 +89,20 @@ div{
     display: flex;
 }
 
+@media ${Breakpoints.medio} {
+
+    width: 100%;
+    margin: 0 auto ;
+
+    h1{
+        font-size: 2.5rem;
+    }
+    
+    p{
+        margin: 1rem 0;
+    }
+}
+
 @media ${Breakpoints.pequeno} {
 
     width: 100%;
@@ -98,6 +118,8 @@ div{
     }
 }
 
+
+
 `
 const Img = styled.img`
 
@@ -107,11 +129,22 @@ z-index: 999;
 animation: ${scale} 1s linear;
 
 
+@media ${Breakpoints.medio}{
+ margin-top: 5.5rem;
+    height: 380px;
+ 
+    
+}
+
 @media ${Breakpoints.pequeno}{
 
     height: 300px;
+    margin-top: 5rem;
     
 }
+
+
+
 
 
 

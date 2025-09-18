@@ -13,6 +13,12 @@ margin: 1.5rem 0;
         border-radius: 30px;
         font-size: 1.2rem;
     }
+    
+     @media ${breakpoints.medio} {
+
+        flex-wrap: wrap;
+        
+    }
 
     @media ${breakpoints.pequeno} {
 
