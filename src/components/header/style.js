@@ -15,13 +15,18 @@ const Container = styled.div`
   
  img {
   width: 30%;
-
   
 }
 
 @media ${Breakpoints.pequeno}{
  
     padding: .8rem 1rem; 
+    justify-content: space-around;
+}
+
+@media ${Breakpoints.medio}{
+ 
+  justify-content: space-around;
 }
 
 `
@@ -46,12 +51,9 @@ position: relative;
 
 }
 
-
-@media ${Breakpoints.pequeno}{
- font-size: 1rem ;
-
+@media  ${Breakpoints.pequeno}{
+  font-size:1.2rem;
 }
-
 
 a {
   color: white;

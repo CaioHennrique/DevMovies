@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import breakpoints from "../../styles/breakpoints"
+import Breakpoints from "../../styles/breakpoints"
 
 const Container = styled.div`
 
@@ -12,18 +12,30 @@ iframe{
     border: none;
 }
 
-@media ${breakpoints.medio} {
-
+@media ${Breakpoints.grande}{
     width: 95%;
+}
+
+@media ${Breakpoints.controleWidthModal} {
+
+    width: 60%;
+    
+}
+
+@media ${ Breakpoints.medio }, ${ Breakpoints.pequeno} {
+
+    width: 90%;
+
+    iframe {
+        
+    }
+  
     
 }
 
 
-@media ${breakpoints.pequeno} {
 
-    width: 95%;
-    
-}
+
 `
 const Background = styled.div`
 

@@ -57,6 +57,15 @@ img{
     animation: ${scale} 0.5s linear;
 }
 
+@media ${Breakpoints.grande} {
+
+    img{
+        height: 400px;
+    }
+    
+
+}
+
 @media ${Breakpoints.medio} {
 
    margin: 0 auto;
@@ -79,7 +88,6 @@ img{
 
 }
 
-
 `
 
 const Container = styled.div`
@@ -90,14 +98,7 @@ height: 100%;
 margin-top:-10rem;
 cursor:default;
 
-@media ${Breakpoints.medio} {
-
-    flex-direction: column;
-    margin-top:-70%;
-
-}
-
-@media ${Breakpoints.pequeno} {
+@media ${Breakpoints.medio}, ${Breakpoints.pequeno} {
 
     flex-direction: column;
     margin-top:-70%;
@@ -114,6 +115,7 @@ font-weight: 700;
 z-index: 99;
 flex-direction: column;
 padding: 2rem;
+position: relative;
 
 h2{
     font-size: 5rem;
@@ -124,7 +126,23 @@ font-size: 1.2rem;
 
 }
 
-@media ${Breakpoints.medio} {
+@media ${Breakpoints.grande} {
+
+    width: 70%;
+    padding-left: .5rem;
+ 
+    h2{
+        font-size: 3rem;
+    }
+    
+    p{
+        font-size:1.5rem;
+        font-weight: 500;
+        margin: 1rem 0;
+    }
+}
+
+@media ${Breakpoints.medio}, ${Breakpoints.pequeno} {
 
     width: 100%;
     margin: 0 auto ;
@@ -140,21 +158,6 @@ font-size: 1.2rem;
     }
 }
 
-@media ${Breakpoints.pequeno} {
-
-    width: 100%;
-    margin: 0 auto ;
-
-    h2{
-        font-size: 3rem;
-    }
-    
-    p{
-        font-size:1rem;
-        font-weight: 500;
-        margin: 1rem 0;
-    }
-}
 
 `
 
@@ -185,7 +188,16 @@ iframe {
     border: none;
 }
 
-@media ${Breakpoints.medio} {
+@media ${Breakpoints.grande} {
+
+    div{
+        width: 75%;
+    }
+
+ 
+}
+
+@media ${Breakpoints.medio}, ${Breakpoints.pequeno} {
 
     div{
         width: 80%;
@@ -194,15 +206,6 @@ iframe {
  
 }
 
-
-@media ${Breakpoints.pequeno} {
-
-    div{
-        width: 80%;
-    }
-
- 
-}
 `
 
 

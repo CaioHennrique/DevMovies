@@ -53,13 +53,7 @@ background: linear-gradient(180deg,rgba(56, 56, 56, 0) 0%, rgba(0, 0, 0, 1) 96%)
 }
 
 
-@media ${Breakpoints.pequeno} {
-
-    flex-direction: column-reverse;
-
-}
-
-@media ${Breakpoints.medio} {
+@media ${Breakpoints.pequeno}, ${Breakpoints.medio}  {
 
     flex-direction: column-reverse;
 
@@ -87,6 +81,20 @@ p{
 
 div{
     display: flex;
+}
+
+@media ${Breakpoints.grande} {
+
+    width: 50%;
+    margin: 0;
+
+    h1{
+        font-size: 2.5rem;
+    }
+    
+    p{
+        margin: 1rem 0;
+    }
 }
 
 @media ${Breakpoints.medio} {
@@ -128,9 +136,16 @@ border-radius: 25px;
 z-index: 999;
 animation: ${scale} 1s linear;
 
+@media ${Breakpoints.grande}{
+    margin-right: 2rem;
+    height: 450px;
+ 
+    
+}
+
 
 @media ${Breakpoints.medio}{
- margin-top: 5.5rem;
+    margin-top: 5.5rem;
     height: 380px;
  
     
@@ -142,11 +157,6 @@ animation: ${scale} 1s linear;
     margin-top: 5rem;
     
 }
-
-
-
-
-
 
 `
 

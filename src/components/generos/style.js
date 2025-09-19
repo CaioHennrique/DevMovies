@@ -14,18 +14,11 @@ margin: 1.5rem 0;
         font-size: 1.2rem;
     }
     
-     @media ${breakpoints.medio} {
+     @media ${breakpoints.medio}, ${breakpoints.pequeno} {
 
         flex-wrap: wrap;
         
     }
-
-    @media ${breakpoints.pequeno} {
-
-        flex-wrap: wrap;
-        
-    }
-
 
 `
 

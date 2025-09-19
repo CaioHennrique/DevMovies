@@ -11,15 +11,17 @@ gap: 1rem;
 img{
     height: 300px;
     width: auto;
-    overflow: hidden;
-
 }
 
-@media ${Breakpoints.medio} {
+@media ${Breakpoints.grande}, ${Breakpoints.medio} {
 
      flex-wrap: wrap;
     img{
         height: 250px;
+    }
+    p{
+        font-size: 1.2rem;
+        margin: 0;
     }
 }
 
@@ -28,7 +30,11 @@ img{
 
      flex-wrap: wrap;
     img{
-        height: 200px;
+        height: 230px;
+    }
+    p{
+        font-size: 1.2rem;
+        margin: 0;
     }
 }
 
@@ -45,4 +51,4 @@ margin: 1.5rem 0 ;
 
 `
 
-export {Container, Title}
+export { Container, Title }

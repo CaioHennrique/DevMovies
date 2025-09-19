@@ -54,10 +54,6 @@ function Detalhe() {
                 <Creditos credits={creditos} />
               </div>
             </Info>
-            <div>
-
-            </div>
-
           </Container>
           <ContainerTrailers>
 

@@ -19,7 +19,7 @@ h3{
 
 }
 
-@media ${Breakpoints.medio} {
+@media ${Breakpoints.medio}, ${Breakpoints.grande}{
   
   img{
     height: 400px;
