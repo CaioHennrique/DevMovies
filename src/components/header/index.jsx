@@ -1,4 +1,4 @@
-import Logo from "../../assets/logo.png"
+import Logo from "../../assets/CODE.png"
 import { Container, Menu, Li } from "./style.js"
 import { Link, useLocation } from "react-router-dom"
 import { useState } from "react"

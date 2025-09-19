@@ -14,20 +14,30 @@ const Container = styled.div`
   transition: background-color 0.6s ease-in-out;
   
  img {
-  width: 30%;
+  height: 100px;
   
+}
+
+@media ${Breakpoints.medio}{
+ 
+  justify-content: space-around;
+
+  img{
+     height: 30%;
+  }
 }
 
 @media ${Breakpoints.pequeno}{
  
     padding: .8rem 1rem; 
     justify-content: space-around;
+
+    img{
+      height: 30%;
+    }
 }
 
-@media ${Breakpoints.medio}{
- 
-  justify-content: space-around;
-}
+
 
 `
 
@@ -37,6 +47,9 @@ display: flex;
 gap: 3rem;
 list-style: none;
 
+@media  ${Breakpoints.pequeno}{
+ gap: 1rem;
+}
 
 
 `
