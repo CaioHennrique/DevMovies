@@ -56,9 +56,11 @@ z-index: 999999;
 const FecharIcon = styled(IoMdCloseCircle)`
 
     color: white;
-    font-size: 3.5rem;
+    font-size: 5rem;
     cursor: pointer;
     margin-bottom: 1rem;
+    position: absolute;
+    top: -40%;
 
     &:hover{
         color:#ff0000

@@ -47,13 +47,13 @@ function Home() {
 
     useEffect(() => {
 
-        if (filme.length > 0) {
+        if (filme.length > 0 && !mostrarModal) {
             const intervalo = setInterval(() => {
                 setIndex((prev) => (prev + 1) % filme.length)
             }, 20000)
             return () => clearInterval(intervalo)
         }
-    }, [filme])
+    }, [filme, mostrarModal])
 
     const destaqueAtual = filme[index]
 
