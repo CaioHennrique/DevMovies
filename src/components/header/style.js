@@ -9,6 +9,7 @@ const Container = styled.div`
   z-index: 999999;
   position: fixed;
   width: 100vw;
+  height: 5rem;
 
   background-color: ${props => props.$mudarCor ? ("#000") : "transparent"};
   transition: background-color 0.6s ease-in-out;
@@ -18,19 +19,10 @@ const Container = styled.div`
   
 }
 
-@media ${Breakpoints.medio}{
- 
-  justify-content: space-around;
-
-  img{
-     height: 30%;
-  }
-}
-
 @media ${Breakpoints.pequeno}{
- 
-    padding: .8rem 1rem; 
+  
     justify-content: space-around;
+   
 
     img{
       height: 3.5rem;

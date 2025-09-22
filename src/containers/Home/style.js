@@ -60,7 +60,7 @@ background: linear-gradient(180deg,rgba(56, 56, 56, 0) 0%, rgba(0, 0, 0, 1) 96%)
 }
 
 @media ${Breakpoints.pequeno} {
-    padding-top: 5rem;
+   padding-top: 5rem;
 }
 
 `
@@ -157,9 +157,7 @@ animation: ${scale} 1s linear;
 
 @media ${Breakpoints.pequeno}{
 
-    height: 300px;
-    margin-top: 5rem;
-    
+    height: 300px;    
 }
 
 `
