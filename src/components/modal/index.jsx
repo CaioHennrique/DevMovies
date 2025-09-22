@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react"
 
 
-import { Container, Background } from "./style"
+import { Container, Background, FecharIcon } from "./style"
 import { ObterTrailer, ObterTrailerSerie } from "../../services/getData"
+
 
 
 
@@ -37,6 +38,9 @@ function Modal({ tipo, filmeId, mostrarModal }) {
       {/* tela de trailer serie */}
       {trailerSerie && (
         <Container>
+
+          <FecharIcon/>
+
           <iframe src={`https://www.youtube.com/embed/${trailerSerie[0].key}`}
             title="Youtube video Player"
             height="500px"
@@ -48,6 +52,9 @@ function Modal({ tipo, filmeId, mostrarModal }) {
       {/* tela de trailer filme */}
       {trailer && (
         <Container>
+
+         <FecharIcon/>
+
           <iframe src={`https://www.youtube.com/embed/${trailer[0].key}`}
             title="Youtube video Player"
             height="500px"

@@ -1,12 +1,17 @@
 import styled from "styled-components"
 import Breakpoints from "../../styles/breakpoints"
+import { IoMdCloseCircle } from "react-icons/io";
 
 const Container = styled.div`
 
 width: 50%;
 position: fixed;
 padding: 3rem;
-background-color: #000;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+background-color: #000; ;
 
 iframe{
     border: none;
@@ -25,16 +30,15 @@ iframe{
 @media ${ Breakpoints.medio }, ${ Breakpoints.pequeno} {
 
     width: 90%;
+    height: 40%;
+    padding: 2rem;
 
     iframe {
-        
+        height: 100%;
     }
   
     
 }
-
-
-
 
 `
 const Background = styled.div`
@@ -49,4 +53,18 @@ justify-content: center;
 z-index: 999999;
 `
 
-export { Container, Background }
+const FecharIcon = styled(IoMdCloseCircle)`
+
+    color: white;
+    font-size: 3.5rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+
+    &:hover{
+        color:#ff0000
+    }
+
+
+`
+
+export { Container, Background, FecharIcon }

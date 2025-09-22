@@ -14,7 +14,7 @@ const Container = styled.div`
   transition: background-color 0.6s ease-in-out;
   
  img {
-  height: 100px;
+  height: 4rem;
   
 }
 
@@ -33,7 +33,7 @@ const Container = styled.div`
     justify-content: space-around;
 
     img{
-      height: 30%;
+      height: 3.5rem;
     }
 }
 

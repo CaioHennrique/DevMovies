@@ -50,7 +50,7 @@ function Home() {
         if (filme.length > 0) {
             const intervalo = setInterval(() => {
                 setIndex((prev) => (prev + 1) % filme.length)
-            }, 15000)
+            }, 20000)
             return () => clearInterval(intervalo)
         }
     }, [filme])

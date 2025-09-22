@@ -59,6 +59,10 @@ background: linear-gradient(180deg,rgba(56, 56, 56, 0) 0%, rgba(0, 0, 0, 1) 96%)
 
 }
 
+@media ${Breakpoints.pequeno} {
+    padding-top: 5rem;
+}
+
 `
 const ContainerConteudo = styled.div`
 padding: 2rem;
