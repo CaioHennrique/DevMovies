@@ -40,13 +40,28 @@ function Filmes() {
     }, [])
 
     useEffect(() => {
-        if (topFilmes.length > 1) {
+
+        if (mostrarModal) {
+            document.body.style.overflow = "hidden";
+        }
+        else {
+            document.body.style.overflow = "auto";
+        }
+
+    }, [mostrarModal])
+
+
+    useEffect(() => {
+
+        if (topFilmes.length > 0 && !mostrarModal) {
             const intervalo = setInterval(() => {
                 setIndex((prev) => (prev + 1) % topFilmes.length)
-            }, 15000)
+            }, 20000)
             return () => clearInterval(intervalo)
         }
-    }, [topFilmes])
+
+    }, [topFilmes, mostrarModal])
+
 
     const destaqueAtual = topFilmes[index]
 

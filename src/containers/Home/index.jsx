@@ -44,6 +44,18 @@ function Home() {
         })
     }, [])
 
+    
+    useEffect(() => {
+        
+        if(mostrarModal){
+             document.body.style.overflow = "hidden";
+        }
+        else{
+            document.body.style.overflow = "auto";
+        }
+
+    }, [ mostrarModal])
+
 
     useEffect(() => {
 
@@ -53,6 +65,14 @@ function Home() {
             }, 20000)
             return () => clearInterval(intervalo)
         }
+
+        if(mostrarModal){
+             document.body.style.overflow = "hidden";
+        }
+        else{
+            document.body.style.overflow = "auto";
+        }
+
     }, [filme, mostrarModal])
 
     const destaqueAtual = filme[index]

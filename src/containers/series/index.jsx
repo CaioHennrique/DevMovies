@@ -39,18 +39,28 @@ function Series() {
         })
     }, [])
 
+    useEffect(() => {
+
+        if (mostrarModal) {
+            document.body.style.overflow = "hidden";
+        }
+        else {
+            document.body.style.overflow = "auto";
+        }
+
+    }, [mostrarModal])
+
 
     useEffect(() => {
 
-        if (topSeries.length > 0) {
+        if (topSeries.length > 0 && !mostrarModal) {
             const intervalo = setInterval(() => {
                 setIndex((prev) => (prev + 1) % topSeries.length)
-            }, 15000)
-
+            }, 20000)
             return () => clearInterval(intervalo)
         }
 
-    }, [topSeries])
+    }, [topSeries, mostrarModal])
 
     const destaqueAtual = topSeries[index]
 
@@ -65,7 +75,7 @@ function Series() {
                         <h1>{destaqueAtual.name}</h1>
 
                         <p>{destaqueAtual.overview}</p>
-                        
+
                         <div>
                             <Button onClick={() => navegacao(`/detalheSerie/${destaqueAtual.id}`)} vermelho={true}>Assista agora</Button>
                             <Button vermelho={false} onClick={() => setMostrarModal(true)} >Assista o trailer</Button>
