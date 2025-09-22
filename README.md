@@ -33,6 +33,10 @@ O projeto está em andamento — recursos podem estar incompletos ou passar por 
 
 ---
 
+## Acesse o projeto:
+
+<a href="https://codemovies.netlify.app" target="_blank">LINK DO PROJETO </a>
+
 ## Como rodar o projeto localmente
 
 1. **Pré-requisitos**  
