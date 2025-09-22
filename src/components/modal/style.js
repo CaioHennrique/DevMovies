@@ -10,7 +10,6 @@ padding: 3rem;
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: center;
 background-color: #000; ;
 
 iframe{
@@ -50,7 +49,14 @@ position: absolute;
 display: flex;
 align-items: center;
 justify-content: center;
+padding-top: 10rem;
 z-index: 999999;
+
+    @media ${ Breakpoints.medio }, ${ Breakpoints.pequeno} {
+
+    padding: 0;
+
+}
 `
 
 const FecharIcon = styled(IoMdCloseCircle)`
@@ -60,11 +66,17 @@ const FecharIcon = styled(IoMdCloseCircle)`
     cursor: pointer;
     margin-bottom: 1rem;
     position: absolute;
-    top: -40%;
+    top: -20%;
+    
 
     &:hover{
         color:#ff0000
     }
+
+    @media ${ Breakpoints.medio }, ${ Breakpoints.pequeno} {
+
+    top: -40%;
+}
 
 
 `
