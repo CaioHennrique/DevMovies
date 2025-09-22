@@ -40,7 +40,7 @@ animation:  ${fadeIn} 1.2s ease-in-out ;
     height: 100%;
     width: 100%;
     position: absolute;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.7);
 }
 
 &::after{
@@ -153,7 +153,7 @@ animation: ${scale} 1s linear;
 
 @media ${Breakpoints.pequeno}{
  
-    height: 200px;   
+    height: 270px;   
     margin-top: 4rem;
 }
 
